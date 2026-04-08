@@ -1,0 +1,1151 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Week 3 - ML for AI | Chapter 6, Month 6</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+<link href='https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='../assets/course-style.css'>
+</head>
+<body data-theme='dark'>
+<div class='popup-overlay' id='masteryPopup'>
+  <div class='popup'>
+    <div class='popup-head'>What makes you "master" level</div>
+    <div class='popup-body'>
+      <ul>
+        <li>choose the right algorithm for a problem</li>
+        <li>prepare messy data correctly</li>
+        <li>train and compare models</li>
+        <li>explain metrics and mistakes</li>
+        <li>tune and improve performance</li>
+        <li>deploy a working ML app</li>
+        <li>understand deep learning and transformers</li>
+        <li>build real AI projects from scratch</li>
+        <li>build your own Machine Learning models</li>
+        <li>design your own AI systems</li>
+        <li>train models from scratch</li>
+        <li>fine-tune powerful existing AI models</li>
+        <li>deploy them like real AI engineers</li>
+      </ul>
+    </div>
+    <div class='popup-actions'><button id='startCourseBtn' class='popup-btn'>Start Learning</button></div>
+  </div>
+</div>
+<nav class='nav'>
+  <a class='nav-home' href='../index.html' aria-label='Go to course index' title='Go to course index'>
+    <svg viewBox='0 0 24 24' aria-hidden='true'><path d='M12 3 2 12h3v9h6v-6h2v6h6v-9h3z'/></svg>
+  </a>
+  <div class='nav-brand'>
+    <span class='brand-sub'>CH 6 | MONTH 6 | WEEK 3</span>
+  </div>
+  <div class='nav-links'><a href='#day1' class='nav-link d1'>Day 1</a>
+<a href='#day2' class='nav-link d2'>Day 2</a>
+<a href='#day3' class='nav-link d3'>Day 3</a>
+<a href='#day4' class='nav-link d4'>Day 4</a>
+<a href='#day5' class='nav-link d5'>Day 5</a>
+<a href='#day6' class='nav-link d6'>Day 6</a>
+<a href='#day7' class='nav-link d7'>Day 7</a></div>
+  <button id='themeToggleBtn' class='theme-toggle' type='button' aria-label='Switch to light mode'>Light Mode</button>
+</nav>
+<header class='hero'>
+  <div class='spiral one'></div><div class='spiral two'></div><div class='spiral three'></div>
+  <div class='hero-inner fade-up'>
+    <div class='hero-tag'>ML for AI Learning Suite</div>
+    <h1>Week 3: <span>ML for AI</span></h1>
+    <p class='hero-sub'>Chapter 6: Boosting + clustering + PCA | Week Theme: Dimensionality reduction. Every day is split into separate subtopic structures with focused explanations, colored code, and mini tasks.</p>
+    <div class='day-pills'><a href='#day1' class='day-pill'><span class='pill-dot' style='background:var(--d1);box-shadow:0 0 8px var(--d1);'></span>Day 1 - Why reduce dimensions</a>
+<a href='#day2' class='day-pill'><span class='pill-dot' style='background:var(--d2);box-shadow:0 0 8px var(--d2);'></span>Day 2 - PCA concept</a>
+<a href='#day3' class='day-pill'><span class='pill-dot' style='background:var(--d3);box-shadow:0 0 8px var(--d3);'></span>Day 3 - PCA math intuition</a>
+<a href='#day4' class='day-pill'><span class='pill-dot' style='background:var(--d4);box-shadow:0 0 8px var(--d4);'></span>Day 4 - PCA in code</a>
+<a href='#day5' class='day-pill'><span class='pill-dot' style='background:var(--d5);box-shadow:0 0 8px var(--d5);'></span>Day 5 - Visualization with reduced features</a>
+<a href='#day6' class='day-pill'><span class='pill-dot' style='background:var(--d6);box-shadow:0 0 8px var(--d6);'></span>Day 6 - Mini project</a>
+<a href='#day7' class='day-pill'><span class='pill-dot' style='background:var(--d7);box-shadow:0 0 8px var(--d7);'></span>Day 7 - Review</a></div>
+    <div class='hero-note'>7-day rhythm: Learn, Notes, Code, Exercises, Mini-Project, Review, Revision.</div>
+  </div>
+</header>
+<main class='content-wrap'><section class='day-section fade-up' id='day1'>
+  <div class='day-header'>
+    <div>
+      <div class='day-badge' style='color:var(--d1);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.03)'>DAY 01</div>
+      <div class='day-title' style='color:var(--d1)'>Why reduce dimensions</div>
+      <div class='day-meta'>Focus: Learn the concept from zero</div>
+    </div>
+    <div class='day-meta'>Week 3 | Month 6</div>
+  </div>
+
+  <div class='grid'>
+    <article class='card fade-up'>
+      <div class='card-head'><div class='card-title'>Beginner Overview</div></div>
+      <div class='card-body'><p>Today topic is &quot;Why reduce dimensions&quot;. We treat this as first-time learning, so every detail is explained from zero.</p>
+<p>Day purpose: <strong class='emph'>Learn</strong> the <strong class='emph'>concept</strong> from zero. Follow one small step at a time. Do not move ahead until each <strong class='emph'>subtopic</strong> is <strong class='emph'>clear</strong>.</p>
+<p>You will use separate <strong class='emph'>subtopic</strong> modules with focused commented <strong class='emph'>code</strong> and mini tasks.</p>
+<p><strong class='emph'>Important rule</strong>: if <strong class='emph'>output</strong> is unclear, print intermediate values and read comments slowly.</p></div>
+    </article>
+
+    <article class='card fade-up'>
+      <div class='card-head'><div class='card-title'>Today's Subtopic Map</div></div>
+      <div class='card-body'>
+        <p>We split complex day topics into small pieces so you can focus clearly.</p>
+        <div class='sub-pill-wrap'><span class='sub-pill'>Why reduce dimensions</span></div>
+      </div>
+    </article>
+
+    <article class='card span2 fade-up'>
+      <div class='card-head'><div class='card-title'>Separate Subtopic Learning Modules</div></div>
+      <div class='card-body'>
+        <div>
+          <div class='topic-module'>
+  <div class='topic-module-head'>
+    <div class='module-index'>Subtopic 1</div>
+    <div class='module-title'>Why reduce dimensions</div>
+  </div>
+  <div class='topic-module-grid'>
+    <div>
+      <div class='module-label'>Concept Focus</div>
+      <ul class='sub-list'>
+        <li>WHAT: Why reduce dimensions is a <strong class='emph'>core</strong> <strong class='emph'>concept</strong> in this lesson.</li>
+<li>WHY: It helps your <strong class='emph'>program</strong> do a specific job in a <strong class='emph'>clear</strong> way.</li>
+<li>WHERE: You use it in real coding tasks when that exact job is needed.</li>
+<li><strong class='emph'>KEY</strong>: A <strong class='emph'>clear</strong> memory line for &#39;Why reduce dimensions&#39; is: keep it simple, run <strong class='emph'>code</strong>, and verify <strong class='emph'>output</strong>.</li>
+<li>HOW TO APPLY: Use flow: read example -&gt; run example -&gt; change one value -&gt; compare <strong class='emph'>output</strong>.</li>
+<li>USE IN <strong class='emph'>PRACTICE</strong>: You use it in real coding tasks when that exact job is needed.</li>
+<li>COMMON MISTAKE: <strong class='emph'>Beginner</strong> tip: keep <strong class='emph'>code</strong> small, run often, and verify <strong class='emph'>output</strong> after every small change.</li>
+<li>EXAMPLE: Simple example: apply &#39;Why reduce dimensions&#39; once in a 5-10 line <strong class='emph'>program</strong> and print the result.</li>
+<li>REMEMBER THIS: A <strong class='emph'>clear</strong> memory line for &#39;Why reduce dimensions&#39; is: keep it simple, run <strong class='emph'>code</strong>, and verify <strong class='emph'>output</strong>.</li>
+<li><strong class='emph'>PRACTICE</strong> NOTE: Run one tiny example for &#39;Why reduce dimensions&#39; and explain <strong class='emph'>output</strong> in your own words.</li>
+      </ul>
+    </div>
+    <div>
+      <div class='code-stack'>
+<div class='code-wrap'>
+  <div class='code-top'>Example 1: Core Example (Python)</div>
+  <pre><code class='language-python'># Generic starter code for topic: Why reduce dimensions
+# 1) Define small sample data
+sample_values = [1, 2, 3, 4]
+
+# 2) Do one simple operation
+total = sum(sample_values)
+
+# 3) Print and check result
+print(&#39;Total:&#39;, total)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Total: 10</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Deep Drill A: run-change-check pattern (Python)</div>
+  <pre><code class='language-python'>value = 10
+print(&#39;Initial value:&#39;, value)
+value = value + 2
+print(&#39;Updated value:&#39;, value)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Initial value: 10
+Updated value: 12</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Deep Drill B: explain output in plain words (Python)</div>
+  <pre><code class='language-python'>print(&#39;Explain what changed between initial and updated output.&#39;)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Explain what changed between initial and updated output.</code></pre>
+  </div>
+</div>
+</div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </article>
+
+    <article class='card easy-task fade-up'>
+      <div class='card-head'><div class='card-title'>Topic-Wise Easy Tasks (1 Per Topic)</div></div>
+      <div class='card-body'><div class='task-stack'>
+<div class='task-item'>
+  <div class='task-top'>
+    <div class='task-id'>Topic Task</div>
+    <div class='task-title2'>Why reduce dimensions - Task</div>
+  </div>
+  <div class='task-desc'>Write a <strong class='emph'>program</strong> to demonstrate &#39;Why reduce dimensions&#39; in one small runnable example.</div>
+  <div class='task-check'><span class='task-check-label'>Expected Check:</span> <strong class='emph'>Task</strong> is focused on &#39;Why reduce dimensions&#39;. <strong class='emph'>Program</strong> runs and shows <strong class='emph'>clear</strong> correct <strong class='emph'>output</strong>.</div>
+</div>
+</div></div>
+    </article>
+
+    
+
+    <article class='card micro span2 fade-up'>
+      <div class='card-head'><div class='card-title'>Micro Check Before Next Day</div></div>
+      <div class='card-body'><ul class='list'><li>Can I explain each <strong class='emph'>subtopic</strong> in easy words without copying notes?</li>
+<li>Can I run the commented <strong class='emph'>code</strong> and <strong class='emph'>understand</strong> each block?</li>
+<li>Can I edit <strong class='emph'>input</strong> values and predict new <strong class='emph'>output</strong> correctly?</li>
+<li>Can I connect today&#39;s topic to <strong class='emph'>machine learning</strong> workflow?</li></ul></div>
+    </article>
+  </div>
+</section>
+<section class='day-section fade-up' id='day2'>
+  <div class='day-header'>
+    <div>
+      <div class='day-badge' style='color:var(--d2);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.03)'>DAY 02</div>
+      <div class='day-title' style='color:var(--d2)'>PCA concept</div>
+      <div class='day-meta'>Focus: Write notes and simple rules</div>
+    </div>
+    <div class='day-meta'>Week 3 | Month 6</div>
+  </div>
+
+  <div class='grid'>
+    <article class='card fade-up'>
+      <div class='card-head'><div class='card-title'>Beginner Overview</div></div>
+      <div class='card-body'><p>Today topic is &quot;PCA <strong class='emph'>concept</strong>&quot;. We treat this as first-time learning, so every detail is explained from zero.</p>
+<p>Day purpose: Write notes and simple rules. Follow one small step at a time. Do not move ahead until each <strong class='emph'>subtopic</strong> is <strong class='emph'>clear</strong>.</p>
+<p>You will use separate <strong class='emph'>subtopic</strong> modules with focused commented <strong class='emph'>code</strong> and mini tasks.</p>
+<p><strong class='emph'>Important rule</strong>: if <strong class='emph'>output</strong> is unclear, print intermediate values and read comments slowly.</p></div>
+    </article>
+
+    <article class='card fade-up'>
+      <div class='card-head'><div class='card-title'>Today's Subtopic Map</div></div>
+      <div class='card-body'>
+        <p>We split complex day topics into small pieces so you can focus clearly.</p>
+        <div class='sub-pill-wrap'><span class='sub-pill'>PCA concept</span></div>
+      </div>
+    </article>
+
+    <article class='card span2 fade-up'>
+      <div class='card-head'><div class='card-title'>Separate Subtopic Learning Modules</div></div>
+      <div class='card-body'>
+        <div>
+          <div class='topic-module'>
+  <div class='topic-module-head'>
+    <div class='module-index'>Subtopic 1</div>
+    <div class='module-title'>PCA concept</div>
+  </div>
+  <div class='topic-module-grid'>
+    <div>
+      <div class='module-label'>Concept Focus</div>
+      <ul class='sub-list'>
+        <li>WHAT: Dimensionality reduction technique that finds new axes (principal components) that capture maximum variance.</li>
+<li>WHAT (continued): Projects high-dimensional <strong class='emph'>data</strong> to lower dimensions while preserving as much information (variance) as possible.</li>
+<li>WHY: Reduce features from 1000 to 50 while keeping 95% of information.</li>
+<li>WHY (continued): Enables visualization of high-dim <strong class='emph'>data</strong>.</li>
+<li>WHERE: Feature reduction, visualization, noise removal, preprocessing</li>
+<li><strong class='emph'>KEY</strong>: &quot;Find fewer dimensions that capture the most information&quot;</li>
+<li>HOW TO APPLY: Prepare small dataset -&gt; apply method -&gt; evaluate -&gt; compare with simple baseline.</li>
+<li>USE IN <strong class='emph'>PRACTICE</strong>: You use it when building a baseline <strong class='emph'>model</strong> and improving results.</li>
+<li>COMMON MISTAKE: Always validate with metrics. A single prediction example is not enough.</li>
+<li>EXAMPLE: Simple example: train on tiny <strong class='emph'>data</strong> and print one prediction plus one metric.</li>
+<li>REMEMBER THIS: Find fewer dimensions that capture the most information</li>
+      </ul>
+    </div>
+    <div>
+      <div class='code-stack'>
+<div class='code-wrap'>
+  <div class='code-top'>Example 1: Core Example (Python)</div>
+  <pre><code class='language-python'># PCA reduces feature dimensions
+from sklearn.decomposition import PCA
+import numpy as np
+
+X = np.array([[2, 1, 0], [3, 2, 1], [4, 3, 1], [5, 4, 2]])
+pca = PCA(n_components=2)
+reduced = pca.fit_transform(X)
+print(reduced)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+calculated value</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Example 2: explained variance (Python)</div>
+  <pre><code class='language-python'>print(&#39;Explained variance ratio:&#39;, pca.explained_variance_ratio_)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Explained variance ratio: calculated value</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Deep Drill A: mini ML workflow tracker (Python)</div>
+  <pre><code class='language-python'>workflow = [&#39;prepare data&#39;, &#39;train model&#39;, &#39;evaluate metric&#39;]
+for step in workflow:
+    print(&#39;Step:&#39;, step)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Step: prepare data
+Step: train model
+Step: evaluate metric</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Deep Drill B: compare two model scores (Python)</div>
+  <pre><code class='language-python'>model_a_score = 0.71
+model_b_score = 0.76
+best_model = &#39;B&#39; if model_b_score &gt; model_a_score else &#39;A&#39;
+print(&#39;Best model:&#39;, best_model)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Best model: B</code></pre>
+  </div>
+</div>
+</div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </article>
+
+    <article class='card easy-task fade-up'>
+      <div class='card-head'><div class='card-title'>Topic-Wise Easy Tasks (1 Per Topic)</div></div>
+      <div class='card-body'><div class='task-stack'>
+<div class='task-item'>
+  <div class='task-top'>
+    <div class='task-id'>Topic Task</div>
+    <div class='task-title2'>PCA concept - Task</div>
+  </div>
+  <div class='task-desc'>Write a <strong class='emph'>program</strong> to apply PCA on a small matrix and print reduced features.</div>
+  <div class='task-check'><span class='task-check-label'>Expected Check:</span> <strong class='emph'>Task</strong> is focused on &#39;PCA <strong class='emph'>concept</strong>&#39;. <strong class='emph'>Program</strong> runs and shows <strong class='emph'>clear</strong> correct <strong class='emph'>output</strong>.</div>
+</div>
+</div></div>
+    </article>
+
+    
+
+    <article class='card micro span2 fade-up'>
+      <div class='card-head'><div class='card-title'>Micro Check Before Next Day</div></div>
+      <div class='card-body'><ul class='list'><li>Can I explain each <strong class='emph'>subtopic</strong> in easy words without copying notes?</li>
+<li>Can I run the commented <strong class='emph'>code</strong> and <strong class='emph'>understand</strong> each block?</li>
+<li>Can I edit <strong class='emph'>input</strong> values and predict new <strong class='emph'>output</strong> correctly?</li>
+<li>Can I connect today&#39;s topic to <strong class='emph'>machine learning</strong> workflow?</li></ul></div>
+    </article>
+  </div>
+</section>
+<section class='day-section fade-up' id='day3'>
+  <div class='day-header'>
+    <div>
+      <div class='day-badge' style='color:var(--d3);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.03)'>DAY 03</div>
+      <div class='day-title' style='color:var(--d3)'>PCA math intuition</div>
+      <div class='day-meta'>Focus: Code the concept with comments</div>
+    </div>
+    <div class='day-meta'>Week 3 | Month 6</div>
+  </div>
+
+  <div class='grid'>
+    <article class='card fade-up'>
+      <div class='card-head'><div class='card-title'>Beginner Overview</div></div>
+      <div class='card-body'><p>Today topic is &quot;PCA math intuition&quot;. We treat this as first-time learning, so every detail is explained from zero.</p>
+<p>Day purpose: <strong class='emph'>Code</strong> the <strong class='emph'>concept</strong> with comments. Follow one small step at a time. Do not move ahead until each <strong class='emph'>subtopic</strong> is <strong class='emph'>clear</strong>.</p>
+<p>You will use separate <strong class='emph'>subtopic</strong> modules with focused commented <strong class='emph'>code</strong> and mini tasks.</p>
+<p><strong class='emph'>Important rule</strong>: if <strong class='emph'>output</strong> is unclear, print intermediate values and read comments slowly.</p></div>
+    </article>
+
+    <article class='card fade-up'>
+      <div class='card-head'><div class='card-title'>Today's Subtopic Map</div></div>
+      <div class='card-body'>
+        <p>We split complex day topics into small pieces so you can focus clearly.</p>
+        <div class='sub-pill-wrap'><span class='sub-pill'>PCA math intuition</span></div>
+      </div>
+    </article>
+
+    <article class='card span2 fade-up'>
+      <div class='card-head'><div class='card-title'>Separate Subtopic Learning Modules</div></div>
+      <div class='card-body'>
+        <div>
+          <div class='topic-module'>
+  <div class='topic-module-head'>
+    <div class='module-index'>Subtopic 1</div>
+    <div class='module-title'>PCA math intuition</div>
+  </div>
+  <div class='topic-module-grid'>
+    <div>
+      <div class='module-label'>Concept Focus</div>
+      <ul class='sub-list'>
+        <li>WHAT: PCA math intuition is an ML method/<strong class='emph'>concept</strong>.</li>
+<li>WHY: It helps train, evaluate, or improve predictive performance.</li>
+<li>WHERE: You use it when building a baseline <strong class='emph'>model</strong> and improving results.</li>
+<li><strong class='emph'>KEY</strong>: A <strong class='emph'>clear</strong> memory line for &#39;PCA math intuition&#39; is: keep it simple, run <strong class='emph'>code</strong>, and verify <strong class='emph'>output</strong>.</li>
+<li>HOW TO APPLY: Prepare small dataset -&gt; apply method -&gt; evaluate -&gt; compare with simple baseline.</li>
+<li>USE IN <strong class='emph'>PRACTICE</strong>: You use it when building a baseline <strong class='emph'>model</strong> and improving results.</li>
+<li>COMMON MISTAKE: Always validate with metrics. A single prediction example is not enough.</li>
+<li>EXAMPLE: Simple example: train on tiny <strong class='emph'>data</strong> and print one prediction plus one metric.</li>
+<li>REMEMBER THIS: A <strong class='emph'>clear</strong> memory line for &#39;PCA math intuition&#39; is: keep it simple, run <strong class='emph'>code</strong>, and verify <strong class='emph'>output</strong>.</li>
+<li><strong class='emph'>PRACTICE</strong> NOTE: Run one tiny example for &#39;PCA math intuition&#39; and explain <strong class='emph'>output</strong> in your own words.</li>
+      </ul>
+    </div>
+    <div>
+      <div class='code-stack'>
+<div class='code-wrap'>
+  <div class='code-top'>Example 1: Core Example (Python)</div>
+  <pre><code class='language-python'># PCA reduces feature dimensions
+from sklearn.decomposition import PCA
+import numpy as np
+
+X = np.array([[2, 1, 0], [3, 2, 1], [4, 3, 1], [5, 4, 2]])
+pca = PCA(n_components=2)
+reduced = pca.fit_transform(X)
+print(reduced)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+calculated value</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Example 2: explained variance (Python)</div>
+  <pre><code class='language-python'>print(&#39;Explained variance ratio:&#39;, pca.explained_variance_ratio_)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Explained variance ratio: calculated value</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Deep Drill A: mini ML workflow tracker (Python)</div>
+  <pre><code class='language-python'>workflow = [&#39;prepare data&#39;, &#39;train model&#39;, &#39;evaluate metric&#39;]
+for step in workflow:
+    print(&#39;Step:&#39;, step)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Step: prepare data
+Step: train model
+Step: evaluate metric</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Deep Drill B: compare two model scores (Python)</div>
+  <pre><code class='language-python'>model_a_score = 0.71
+model_b_score = 0.76
+best_model = &#39;B&#39; if model_b_score &gt; model_a_score else &#39;A&#39;
+print(&#39;Best model:&#39;, best_model)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Best model: B</code></pre>
+  </div>
+</div>
+</div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </article>
+
+    <article class='card easy-task fade-up'>
+      <div class='card-head'><div class='card-title'>Topic-Wise Easy Tasks (1 Per Topic)</div></div>
+      <div class='card-body'><div class='task-stack'>
+<div class='task-item'>
+  <div class='task-top'>
+    <div class='task-id'>Topic Task</div>
+    <div class='task-title2'>PCA math intuition - Task</div>
+  </div>
+  <div class='task-desc'>Write a <strong class='emph'>program</strong> to apply PCA on a small matrix and print reduced features.</div>
+  <div class='task-check'><span class='task-check-label'>Expected Check:</span> <strong class='emph'>Task</strong> is focused on &#39;PCA math intuition&#39;. <strong class='emph'>Program</strong> runs and shows <strong class='emph'>clear</strong> correct <strong class='emph'>output</strong>.</div>
+</div>
+</div></div>
+    </article>
+
+    
+
+    <article class='card micro span2 fade-up'>
+      <div class='card-head'><div class='card-title'>Micro Check Before Next Day</div></div>
+      <div class='card-body'><ul class='list'><li>Can I explain each <strong class='emph'>subtopic</strong> in easy words without copying notes?</li>
+<li>Can I run the commented <strong class='emph'>code</strong> and <strong class='emph'>understand</strong> each block?</li>
+<li>Can I edit <strong class='emph'>input</strong> values and predict new <strong class='emph'>output</strong> correctly?</li>
+<li>Can I connect today&#39;s topic to <strong class='emph'>machine learning</strong> workflow?</li></ul></div>
+    </article>
+  </div>
+</section>
+<section class='day-section fade-up' id='day4'>
+  <div class='day-header'>
+    <div>
+      <div class='day-badge' style='color:var(--d4);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.03)'>DAY 04</div>
+      <div class='day-title' style='color:var(--d4)'>PCA in code</div>
+      <div class='day-meta'>Focus: Solve very easy exercises</div>
+    </div>
+    <div class='day-meta'>Week 3 | Month 6</div>
+  </div>
+
+  <div class='grid'>
+    <article class='card fade-up'>
+      <div class='card-head'><div class='card-title'>Beginner Overview</div></div>
+      <div class='card-body'><p>Today topic is &quot;PCA in <strong class='emph'>code</strong>&quot;. We treat this as first-time learning, so every detail is explained from zero.</p>
+<p>Day purpose: Solve very easy exercises. Follow one small step at a time. Do not move ahead until each <strong class='emph'>subtopic</strong> is <strong class='emph'>clear</strong>.</p>
+<p>You will use separate <strong class='emph'>subtopic</strong> modules with focused commented <strong class='emph'>code</strong> and mini tasks.</p>
+<p><strong class='emph'>Important rule</strong>: if <strong class='emph'>output</strong> is unclear, print intermediate values and read comments slowly.</p></div>
+    </article>
+
+    <article class='card fade-up'>
+      <div class='card-head'><div class='card-title'>Today's Subtopic Map</div></div>
+      <div class='card-body'>
+        <p>We split complex day topics into small pieces so you can focus clearly.</p>
+        <div class='sub-pill-wrap'><span class='sub-pill'>PCA in code</span></div>
+      </div>
+    </article>
+
+    <article class='card span2 fade-up'>
+      <div class='card-head'><div class='card-title'>Separate Subtopic Learning Modules</div></div>
+      <div class='card-body'>
+        <div>
+          <div class='topic-module'>
+  <div class='topic-module-head'>
+    <div class='module-index'>Subtopic 1</div>
+    <div class='module-title'>PCA in code</div>
+  </div>
+  <div class='topic-module-grid'>
+    <div>
+      <div class='module-label'>Concept Focus</div>
+      <ul class='sub-list'>
+        <li>WHAT: PCA in <strong class='emph'>code</strong> is an <strong class='emph'>important</strong> <strong class='emph'>concept</strong> in this day.</li>
+<li>WHY: It helps you build reliable ML and AI engineering skills <strong class='emph'>step by step</strong>.</li>
+<li>WHERE: Used in practical coding tasks, projects, and production workflows.</li>
+<li><strong class='emph'>KEY</strong>: &quot;Use PCA in <strong class='emph'>code</strong> with <strong class='emph'>clear</strong> <strong class='emph'>input</strong>,</li>
+<li>HOW TO APPLY: Prepare small dataset -&gt; apply method -&gt; evaluate -&gt; compare with simple baseline.</li>
+<li>USE IN <strong class='emph'>PRACTICE</strong>: You use it when building a baseline <strong class='emph'>model</strong> and improving results.</li>
+<li>COMMON MISTAKE: Always validate with metrics. A single prediction example is not enough.</li>
+<li>EXAMPLE: Simple example: train on tiny <strong class='emph'>data</strong> and print one prediction plus one metric.</li>
+<li>REMEMBER THIS: Use PCA in <strong class='emph'>code</strong> with <strong class='emph'>clear</strong> <strong class='emph'>input</strong>, <strong class='emph'>clear</strong> process, and <strong class='emph'>clear</strong> <strong class='emph'>output</strong>.</li>
+<li><strong class='emph'>PRACTICE</strong> NOTE: Run one tiny example for &#39;PCA in <strong class='emph'>code</strong>&#39; and explain <strong class='emph'>output</strong> in your own words.</li>
+      </ul>
+    </div>
+    <div>
+      <div class='code-stack'>
+<div class='code-wrap'>
+  <div class='code-top'>Example 1: Core Example (Python)</div>
+  <pre><code class='language-python'># PCA reduces feature dimensions
+from sklearn.decomposition import PCA
+import numpy as np
+
+X = np.array([[2, 1, 0], [3, 2, 1], [4, 3, 1], [5, 4, 2]])
+pca = PCA(n_components=2)
+reduced = pca.fit_transform(X)
+print(reduced)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+calculated value</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Example 2: explained variance (Python)</div>
+  <pre><code class='language-python'>print(&#39;Explained variance ratio:&#39;, pca.explained_variance_ratio_)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Explained variance ratio: calculated value</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Deep Drill A: mini ML workflow tracker (Python)</div>
+  <pre><code class='language-python'>workflow = [&#39;prepare data&#39;, &#39;train model&#39;, &#39;evaluate metric&#39;]
+for step in workflow:
+    print(&#39;Step:&#39;, step)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Step: prepare data
+Step: train model
+Step: evaluate metric</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Deep Drill B: compare two model scores (Python)</div>
+  <pre><code class='language-python'>model_a_score = 0.71
+model_b_score = 0.76
+best_model = &#39;B&#39; if model_b_score &gt; model_a_score else &#39;A&#39;
+print(&#39;Best model:&#39;, best_model)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Best model: B</code></pre>
+  </div>
+</div>
+</div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </article>
+
+    <article class='card easy-task fade-up'>
+      <div class='card-head'><div class='card-title'>Topic-Wise Easy Tasks (1 Per Topic)</div></div>
+      <div class='card-body'><div class='task-stack'>
+<div class='task-item'>
+  <div class='task-top'>
+    <div class='task-id'>Topic Task</div>
+    <div class='task-title2'>PCA in code - Task</div>
+  </div>
+  <div class='task-desc'>Write a <strong class='emph'>program</strong> to apply PCA on a small matrix and print reduced features.</div>
+  <div class='task-check'><span class='task-check-label'>Expected Check:</span> <strong class='emph'>Task</strong> is focused on &#39;PCA in <strong class='emph'>code</strong>&#39;. <strong class='emph'>Program</strong> runs and shows <strong class='emph'>clear</strong> correct <strong class='emph'>output</strong>.</div>
+</div>
+</div></div>
+    </article>
+
+    
+
+    <article class='card micro span2 fade-up'>
+      <div class='card-head'><div class='card-title'>Micro Check Before Next Day</div></div>
+      <div class='card-body'><ul class='list'><li>Can I explain each <strong class='emph'>subtopic</strong> in easy words without copying notes?</li>
+<li>Can I run the commented <strong class='emph'>code</strong> and <strong class='emph'>understand</strong> each block?</li>
+<li>Can I edit <strong class='emph'>input</strong> values and predict new <strong class='emph'>output</strong> correctly?</li>
+<li>Can I connect today&#39;s topic to <strong class='emph'>machine learning</strong> workflow?</li></ul></div>
+    </article>
+  </div>
+</section>
+<section class='day-section fade-up' id='day5'>
+  <div class='day-header'>
+    <div>
+      <div class='day-badge' style='color:var(--d5);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.03)'>DAY 05</div>
+      <div class='day-title' style='color:var(--d5)'>Visualization with reduced features</div>
+      <div class='day-meta'>Focus: Build a tiny mini-project</div>
+    </div>
+    <div class='day-meta'>Week 3 | Month 6</div>
+  </div>
+
+  <div class='grid'>
+    <article class='card fade-up'>
+      <div class='card-head'><div class='card-title'>Beginner Overview</div></div>
+      <div class='card-body'><p>Today topic is &quot;Visualization with reduced features&quot;. We treat this as first-time learning, so every detail is explained from zero.</p>
+<p>Day purpose: Build a tiny <strong class='emph'>mini-project</strong>. Follow one small step at a time. Do not move ahead until each <strong class='emph'>subtopic</strong> is <strong class='emph'>clear</strong>.</p>
+<p>You will use separate <strong class='emph'>subtopic</strong> modules with focused commented <strong class='emph'>code</strong> and mini tasks.</p>
+<p><strong class='emph'>Important rule</strong>: if <strong class='emph'>output</strong> is unclear, print intermediate values and read comments slowly.</p></div>
+    </article>
+
+    <article class='card fade-up'>
+      <div class='card-head'><div class='card-title'>Today's Subtopic Map</div></div>
+      <div class='card-body'>
+        <p>We split complex day topics into small pieces so you can focus clearly.</p>
+        <div class='sub-pill-wrap'><span class='sub-pill'>Visualization with reduced features</span></div>
+      </div>
+    </article>
+
+    <article class='card span2 fade-up'>
+      <div class='card-head'><div class='card-title'>Separate Subtopic Learning Modules</div></div>
+      <div class='card-body'>
+        <div>
+          <div class='topic-module'>
+  <div class='topic-module-head'>
+    <div class='module-index'>Subtopic 1</div>
+    <div class='module-title'>Visualization with reduced features</div>
+  </div>
+  <div class='topic-module-grid'>
+    <div>
+      <div class='module-label'>Concept Focus</div>
+      <ul class='sub-list'>
+        <li>WHAT: Visualization with reduced features is an <strong class='emph'>important</strong> <strong class='emph'>concept</strong> in this day.</li>
+<li>WHY: It helps you build reliable ML and AI engineering skills <strong class='emph'>step by step</strong>.</li>
+<li>WHERE: Used in practical coding tasks, projects, and production workflows.</li>
+<li><strong class='emph'>KEY</strong>: &quot;Use Visualization with reduced features with <strong class='emph'>clear</strong> <strong class='emph'>input</strong>,</li>
+<li>HOW TO APPLY: Load <strong class='emph'>data</strong> -&gt; check shape/columns -&gt; apply &#39;Visualization with reduced features&#39; -&gt; print before/after.</li>
+<li>USE IN <strong class='emph'>PRACTICE</strong>: You use it in EDA and preprocessing so <strong class='emph'>model</strong> <strong class='emph'>input</strong> stays correct.</li>
+<li>COMMON MISTAKE: Always check <strong class='emph'>data</strong> after every operation. Never assume transformation is correct.</li>
+<li>EXAMPLE: Simple example: tiny table with 3-5 rows showing before and after &#39;Visualization with reduced features&#39;.</li>
+<li>REMEMBER THIS: Use Visualization with reduced features with <strong class='emph'>clear</strong> <strong class='emph'>input</strong>, <strong class='emph'>clear</strong> process, and <strong class='emph'>clear</strong> <strong class='emph'>output</strong>.</li>
+<li><strong class='emph'>PRACTICE</strong> NOTE: Run one tiny example for &#39;Visualization with reduced features&#39; and explain <strong class='emph'>output</strong> in your own words.</li>
+      </ul>
+    </div>
+    <div>
+      <div class='code-stack'>
+<div class='code-wrap'>
+  <div class='code-top'>Example 1: Core Example (Python)</div>
+  <pre><code class='language-python'># Basic plotting for understanding data trends
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4]
+y = [2, 4, 3, 6]
+
+plt.plot(x, y, marker=&#39;o&#39;)     # Line graph
+plt.title(&#39;Simple Trend&#39;)
+plt.xlabel(&#39;Day&#39;)
+plt.ylabel(&#39;Value&#39;)
+plt.show()</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+No direct output appears until print() runs.</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Example 2: bar chart (Python)</div>
+  <pre><code class='language-python'>import matplotlib.pyplot as plt
+labels = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]
+values = [5, 7, 4]
+plt.bar(labels, values)
+plt.title(&#39;Category Values&#39;)
+plt.show()</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+No direct output appears until print() runs.</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Deep Drill A: tiny before/after data check (Python)</div>
+  <pre><code class='language-python'>before_rows = 5
+after_rows = 4
+print(&#39;Before rows:&#39;, before_rows)
+print(&#39;After rows:&#39;, after_rows)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Before rows: 5
+After rows: 4</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Deep Drill B: summary-style checks (Python)</div>
+  <pre><code class='language-python'>missing_before = 3
+missing_after = 0
+print(&#39;Missing before/after:&#39;, missing_before, missing_after)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Missing before/after: 3 0</code></pre>
+  </div>
+</div>
+</div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </article>
+
+    <article class='card easy-task fade-up'>
+      <div class='card-head'><div class='card-title'>Topic-Wise Easy Tasks (1 Per Topic)</div></div>
+      <div class='card-body'><div class='task-stack'>
+<div class='task-item'>
+  <div class='task-top'>
+    <div class='task-id'>Topic Task</div>
+    <div class='task-title2'>Visualization with reduced features - Task</div>
+  </div>
+  <div class='task-desc'>Write a <strong class='emph'>program</strong> to build a simple chart for 5 values and print one short observation from the chart.</div>
+  <div class='task-check'><span class='task-check-label'>Expected Check:</span> <strong class='emph'>Task</strong> is focused on &#39;Visualization with reduced features&#39;. <strong class='emph'>Program</strong> runs and shows <strong class='emph'>clear</strong> correct <strong class='emph'>output</strong>.</div>
+</div>
+</div></div>
+    </article>
+
+    
+
+    <article class='card micro span2 fade-up'>
+      <div class='card-head'><div class='card-title'>Micro Check Before Next Day</div></div>
+      <div class='card-body'><ul class='list'><li>Can I explain each <strong class='emph'>subtopic</strong> in easy words without copying notes?</li>
+<li>Can I run the commented <strong class='emph'>code</strong> and <strong class='emph'>understand</strong> each block?</li>
+<li>Can I edit <strong class='emph'>input</strong> values and predict new <strong class='emph'>output</strong> correctly?</li>
+<li>Can I connect today&#39;s topic to <strong class='emph'>machine learning</strong> workflow?</li></ul></div>
+    </article>
+  </div>
+</section>
+<section class='day-section fade-up' id='day6'>
+  <div class='day-header'>
+    <div>
+      <div class='day-badge' style='color:var(--d6);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.03)'>DAY 06</div>
+      <div class='day-title' style='color:var(--d6)'>Mini project</div>
+      <div class='day-meta'>Focus: Review mistakes and improve</div>
+    </div>
+    <div class='day-meta'>Week 3 | Month 6</div>
+  </div>
+
+  <div class='grid'>
+    <article class='card fade-up'>
+      <div class='card-head'><div class='card-title'>Beginner Overview</div></div>
+      <div class='card-body'><p>Today topic is &quot;Mini project&quot;. We treat this as first-time learning, so every detail is explained from zero.</p>
+<p>Day purpose: <strong class='emph'>Review</strong> mistakes and improve. Follow one small step at a time. Do not move ahead until each <strong class='emph'>subtopic</strong> is <strong class='emph'>clear</strong>.</p>
+<p>You will use separate <strong class='emph'>subtopic</strong> modules with focused commented <strong class='emph'>code</strong> and mini tasks.</p>
+<p><strong class='emph'>Important rule</strong>: if <strong class='emph'>output</strong> is unclear, print intermediate values and read comments slowly.</p></div>
+    </article>
+
+    <article class='card fade-up'>
+      <div class='card-head'><div class='card-title'>Today's Subtopic Map</div></div>
+      <div class='card-body'>
+        <p>We split complex day topics into small pieces so you can focus clearly.</p>
+        <div class='sub-pill-wrap'><span class='sub-pill'>Mini project</span></div>
+      </div>
+    </article>
+
+    <article class='card span2 fade-up'>
+      <div class='card-head'><div class='card-title'>Separate Subtopic Learning Modules</div></div>
+      <div class='card-body'>
+        <div>
+          <div class='topic-module'>
+  <div class='topic-module-head'>
+    <div class='module-index'>Subtopic 1</div>
+    <div class='module-title'>Mini project</div>
+  </div>
+  <div class='topic-module-grid'>
+    <div>
+      <div class='module-label'>Concept Focus</div>
+      <ul class='sub-list'>
+        <li>WHAT: Mini project is a professional <strong class='emph'>practice</strong> <strong class='emph'>concept</strong> for consolidating and presenting your skills.</li>
+<li>WHY: Execution and communication are both required for real engineering impact.</li>
+<li>WHERE: Used in portfolio work, collaboration, hiring preparation, and final delivery.</li>
+<li><strong class='emph'>KEY</strong>: &quot;Mini project converts learning into visible, real-world capability.&quot;</li>
+<li>HOW TO APPLY: Use flow: read example -&gt; run example -&gt; change one value -&gt; compare <strong class='emph'>output</strong>.</li>
+<li>USE IN <strong class='emph'>PRACTICE</strong>: You use it in real coding tasks when that exact job is needed.</li>
+<li>COMMON MISTAKE: <strong class='emph'>Beginner</strong> tip: keep <strong class='emph'>code</strong> small, run often, and verify <strong class='emph'>output</strong> after every small change.</li>
+<li>EXAMPLE: Simple example: apply &#39;Mini project&#39; once in a 5-10 line <strong class='emph'>program</strong> and print the result.</li>
+<li>REMEMBER THIS: Mini project converts learning into visible, real-world capability.</li>
+<li><strong class='emph'>PRACTICE</strong> NOTE: Run one tiny example for &#39;Mini project&#39; and explain <strong class='emph'>output</strong> in your own words.</li>
+      </ul>
+    </div>
+    <div>
+      <div class='code-stack'>
+<div class='code-wrap'>
+  <div class='code-top'>Example 1: Core Example (Python)</div>
+  <pre><code class='language-python'># Generic starter code for topic: Mini project
+# 1) Define small sample data
+sample_values = [1, 2, 3, 4]
+
+# 2) Do one simple operation
+total = sum(sample_values)
+
+# 3) Print and check result
+print(&#39;Total:&#39;, total)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Total: 10</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Deep Drill A: run-change-check pattern (Python)</div>
+  <pre><code class='language-python'>value = 10
+print(&#39;Initial value:&#39;, value)
+value = value + 2
+print(&#39;Updated value:&#39;, value)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Initial value: 10
+Updated value: 12</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Deep Drill B: explain output in plain words (Python)</div>
+  <pre><code class='language-python'>print(&#39;Explain what changed between initial and updated output.&#39;)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Explain what changed between initial and updated output.</code></pre>
+  </div>
+</div>
+</div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </article>
+
+    <article class='card easy-task fade-up'>
+      <div class='card-head'><div class='card-title'>Topic-Wise Easy Tasks (1 Per Topic)</div></div>
+      <div class='card-body'><div class='task-stack'>
+<div class='task-item'>
+  <div class='task-top'>
+    <div class='task-id'>Topic Task</div>
+    <div class='task-title2'>Mini project - Task</div>
+  </div>
+  <div class='task-desc'>Write a <strong class='emph'>program</strong> to demonstrate &#39;Mini project&#39; in one small runnable example.</div>
+  <div class='task-check'><span class='task-check-label'>Expected Check:</span> <strong class='emph'>Task</strong> is focused on &#39;Mini project&#39;. <strong class='emph'>Program</strong> runs and shows <strong class='emph'>clear</strong> correct <strong class='emph'>output</strong>.</div>
+</div>
+<div class='task-item'>
+  <div class='task-top'>
+    <div class='task-id'>Topic Task</div>
+    <div class='task-title2'>Week Integration Task (Days 1-5)</div>
+  </div>
+  <div class='task-desc'>Make a <strong class='emph'>program</strong> that combines all Days 1-5 working in one flow: W, P, P, P, V. Take user <strong class='emph'>input</strong>, process it using learned logic, and print final <strong class='emph'>output</strong>.</div>
+  <div class='task-check'><span class='task-check-label'>Expected Check:</span> <strong class='emph'>Program</strong> clearly includes all five day areas and runs successfully for at least 3 test cases.</div>
+</div>
+</div></div>
+    </article>
+
+        <article class='card quiz fade-up'>
+      <div class='card-head'><div class='card-title'>Revision MCQ Checkpoint (Interactive)</div></div>
+      <div class='card-body'><div class='mcq-card' data-day='6'>
+  <div class='mcq-intro'>Select one option for each question, then click <strong>Check Answers</strong>.</div>
+  <div class='mcq-item' data-answer='0'>
+  <div class='mcq-question'>Q1. Which option is the best <strong class='emph'>beginner</strong> learning flow for &#39;Mini project&#39;?</div>
+  <div class='mcq-options'>
+    <label class='mcq-option'><input type='radio' name='d6_q1' value='0'><span>Run a small example, check output, then write one clear rule.</span></label>
+<label class='mcq-option'><input type='radio' name='d6_q1' value='1'><span>Skip code and only read theory.</span></label>
+<label class='mcq-option'><input type='radio' name='d6_q1' value='2'><span>Start with advanced models and come back later.</span></label>
+<label class='mcq-option'><input type='radio' name='d6_q1' value='3'><span>Copy final answer without running it.</span></label>
+  </div>
+  <div class='mcq-feedback'></div>
+  <div class='mcq-why'>Explanation: Best <strong class='emph'>beginner</strong> progress comes from: small <strong class='emph'>code</strong> run -&gt; <strong class='emph'>output</strong> check -&gt; short rule note.</div>
+</div>
+<div class='mcq-item' data-answer='0'>
+  <div class='mcq-question'>Q2. After changing one value in &#39;second <strong class='emph'>concept</strong>&#39; <strong class='emph'>code</strong>, what should you do next?</div>
+  <div class='mcq-options'>
+    <label class='mcq-option'><input type='radio' name='d6_q2' value='0'><span>Run again and compare output with previous run.</span></label>
+<label class='mcq-option'><input type='radio' name='d6_q2' value='1'><span>Delete the old output and move on.</span></label>
+<label class='mcq-option'><input type='radio' name='d6_q2' value='2'><span>Ignore output if there is no crash.</span></label>
+<label class='mcq-option'><input type='radio' name='d6_q2' value='3'><span>Change many values at once.</span></label>
+  </div>
+  <div class='mcq-feedback'></div>
+  <div class='mcq-why'>Explanation: One change at a time keeps learning <strong class='emph'>clear</strong> and helps you <strong class='emph'>understand</strong> cause and effect.</div>
+</div>
+<div class='mcq-item' data-answer='0'>
+  <div class='mcq-question'>Q3. If &#39;third <strong class='emph'>concept</strong>&#39; <strong class='emph'>output</strong> is unexpected, what is the safest debugging step?</div>
+  <div class='mcq-options'>
+    <label class='mcq-option'><input type='radio' name='d6_q3' value='0'><span>Print intermediate values and verify each step.</span></label>
+<label class='mcq-option'><input type='radio' name='d6_q3' value='1'><span>Rewrite full file from zero immediately.</span></label>
+<label class='mcq-option'><input type='radio' name='d6_q3' value='2'><span>Ignore it if program still runs.</span></label>
+<label class='mcq-option'><input type='radio' name='d6_q3' value='3'><span>Remove comments to shorten code.</span></label>
+  </div>
+  <div class='mcq-feedback'></div>
+  <div class='mcq-why'>Explanation: Intermediate outputs show exactly where logic changed, so fixing becomes easy.</div>
+</div>
+<div class='mcq-item' data-answer='0'>
+  <div class='mcq-question'>Q4. For today, which <strong class='emph'>task</strong> evidence shows real understanding?</div>
+  <div class='mcq-options'>
+    <label class='mcq-option'><input type='radio' name='d6_q4' value='0'><span>Code runs, outputs are recorded, and notes explain why results happen.</span></label>
+<label class='mcq-option'><input type='radio' name='d6_q4' value='1'><span>Only final code exists without outputs.</span></label>
+<label class='mcq-option'><input type='radio' name='d6_q4' value='2'><span>Only notes exist without running code.</span></label>
+<label class='mcq-option'><input type='radio' name='d6_q4' value='3'><span>Only one screenshot exists without explanation.</span></label>
+  </div>
+  <div class='mcq-feedback'></div>
+  <div class='mcq-why'>Explanation: Real learning needs runnable <strong class='emph'>code</strong> + verified <strong class='emph'>output</strong> + easy explanation.</div>
+</div>
+<div class='mcq-item' data-answer='0'>
+  <div class='mcq-question'>Q5. How does today&#39;s learning help future ML work?</div>
+  <div class='mcq-options'>
+    <label class='mcq-option'><input type='radio' name='d6_q5' value='0'><span>It builds reliable foundations for data handling, model code, and debugging.</span></label>
+<label class='mcq-option'><input type='radio' name='d6_q5' value='1'><span>It is not needed after this week.</span></label>
+<label class='mcq-option'><input type='radio' name='d6_q5' value='2'><span>It only helps for UI design.</span></label>
+<label class='mcq-option'><input type='radio' name='d6_q5' value='3'><span>It replaces model evaluation.</span></label>
+  </div>
+  <div class='mcq-feedback'></div>
+  <div class='mcq-why'>Explanation: Strong basics directly reduce ML bugs and improve <strong class='emph'>model</strong> development speed.</div>
+</div>
+  <div class='mcq-actions'>
+    <button type='button' class='mcq-btn mcq-check'>Check Answers</button>
+    <button type='button' class='mcq-btn mcq-reset'>Reset</button>
+    <div class='mcq-score'></div>
+  </div>
+</div></div>
+    </article>
+
+    <article class='card micro span2 fade-up'>
+      <div class='card-head'><div class='card-title'>Micro Check Before Next Day</div></div>
+      <div class='card-body'><ul class='list'><li>Can I explain each <strong class='emph'>subtopic</strong> in easy words without copying notes?</li>
+<li>Can I run the commented <strong class='emph'>code</strong> and <strong class='emph'>understand</strong> each block?</li>
+<li>Can I edit <strong class='emph'>input</strong> values and predict new <strong class='emph'>output</strong> correctly?</li>
+<li>Can I connect today&#39;s topic to <strong class='emph'>machine learning</strong> workflow?</li></ul></div>
+    </article>
+  </div>
+</section>
+<section class='day-section fade-up' id='day7'>
+  <div class='day-header'>
+    <div>
+      <div class='day-badge' style='color:var(--d7);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.03)'>DAY 07</div>
+      <div class='day-title' style='color:var(--d7)'>Review</div>
+      <div class='day-meta'>Focus: Revision, quiz, and rest</div>
+    </div>
+    <div class='day-meta'>Week 3 | Month 6</div>
+  </div>
+
+  <div class='grid'>
+    <article class='card fade-up'>
+      <div class='card-head'><div class='card-title'>Beginner Overview</div></div>
+      <div class='card-body'><p>Today topic is &quot;<strong class='emph'>Review</strong>&quot;. We treat this as first-time learning, so every detail is explained from zero.</p>
+<p>Day purpose: Revision, <strong class='emph'>quiz</strong>, and rest. Follow one small step at a time. Do not move ahead until each <strong class='emph'>subtopic</strong> is <strong class='emph'>clear</strong>.</p>
+<p>You will use separate <strong class='emph'>subtopic</strong> modules with focused commented <strong class='emph'>code</strong> and mini tasks.</p>
+<p><strong class='emph'>Important rule</strong>: if <strong class='emph'>output</strong> is unclear, print intermediate values and read comments slowly.</p></div>
+    </article>
+
+    <article class='card fade-up'>
+      <div class='card-head'><div class='card-title'>Today's Subtopic Map</div></div>
+      <div class='card-body'>
+        <p>We split complex day topics into small pieces so you can focus clearly.</p>
+        <div class='sub-pill-wrap'><span class='sub-pill'>Review</span></div>
+      </div>
+    </article>
+
+    <article class='card span2 fade-up'>
+      <div class='card-head'><div class='card-title'>Separate Subtopic Learning Modules</div></div>
+      <div class='card-body'>
+        <div>
+          <div class='topic-module'>
+  <div class='topic-module-head'>
+    <div class='module-index'>Subtopic 1</div>
+    <div class='module-title'>Review</div>
+  </div>
+  <div class='topic-module-grid'>
+    <div>
+      <div class='module-label'>Concept Focus</div>
+      <ul class='sub-list'>
+        <li>WHAT: <strong class='emph'>Review</strong> is a professional <strong class='emph'>practice</strong> <strong class='emph'>concept</strong> for consolidating and presenting your skills.</li>
+<li>WHY: Execution and communication are both required for real engineering impact.</li>
+<li>WHERE: Used in portfolio work, collaboration, hiring preparation, and final delivery.</li>
+<li><strong class='emph'>KEY</strong>: &quot;<strong class='emph'>Review</strong> converts learning into</li>
+<li>HOW TO APPLY: Use flow: read example -&gt; run example -&gt; change one value -&gt; compare <strong class='emph'>output</strong>.</li>
+<li>USE IN <strong class='emph'>PRACTICE</strong>: You use it in real coding tasks when that exact job is needed.</li>
+<li>COMMON MISTAKE: <strong class='emph'>Beginner</strong> tip: keep <strong class='emph'>code</strong> small, run often, and verify <strong class='emph'>output</strong> after every small change.</li>
+<li>EXAMPLE: Simple example: apply &#39;<strong class='emph'>Review</strong>&#39; once in a 5-10 line <strong class='emph'>program</strong> and print the result.</li>
+<li>REMEMBER THIS: <strong class='emph'>Review</strong> converts learning into visible, real-world capability.</li>
+<li><strong class='emph'>PRACTICE</strong> NOTE: Run one tiny example for &#39;<strong class='emph'>Review</strong>&#39; and explain <strong class='emph'>output</strong> in your own words.</li>
+      </ul>
+    </div>
+    <div>
+      <div class='code-stack'>
+<div class='code-wrap'>
+  <div class='code-top'>Example 1: Core Example (Python)</div>
+  <pre><code class='language-python'># Generic starter code for topic: Review
+# 1) Define small sample data
+sample_values = [1, 2, 3, 4]
+
+# 2) Do one simple operation
+total = sum(sample_values)
+
+# 3) Print and check result
+print(&#39;Total:&#39;, total)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Total: 10</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Deep Drill A: run-change-check pattern (Python)</div>
+  <pre><code class='language-python'>value = 10
+print(&#39;Initial value:&#39;, value)
+value = value + 2
+print(&#39;Updated value:&#39;, value)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Initial value: 10
+Updated value: 12</code></pre>
+  </div>
+</div>
+<div class='code-wrap'>
+  <div class='code-top'>Deep Drill B: explain output in plain words (Python)</div>
+  <pre><code class='language-python'>print(&#39;Explain what changed between initial and updated output.&#39;)</code></pre>
+  <div class='code-output'>
+    <div class='code-output-top'>Expected Output</div>
+    <pre><code class='language-output'>Expected output:
+Explain what changed between initial and updated output.</code></pre>
+  </div>
+</div>
+</div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </article>
+
+    <article class='card easy-task fade-up'>
+      <div class='card-head'><div class='card-title'>Topic-Wise Easy Tasks (1 Per Topic)</div></div>
+      <div class='card-body'><div class='task-stack'>
+<div class='task-item'>
+  <div class='task-top'>
+    <div class='task-id'>Topic Task</div>
+    <div class='task-title2'>Review - Task</div>
+  </div>
+  <div class='task-desc'>Write a <strong class='emph'>program</strong> that reuses one <strong class='emph'>key</strong> <strong class='emph'>concept</strong> from each of the first five days and prints a final combined result.</div>
+  <div class='task-check'><span class='task-check-label'>Expected Check:</span> <strong class='emph'>Task</strong> is focused on &#39;<strong class='emph'>Review</strong>&#39;. <strong class='emph'>Program</strong> runs and shows <strong class='emph'>clear</strong> correct <strong class='emph'>output</strong>.</div>
+</div>
+<div class='task-item'>
+  <div class='task-top'>
+    <div class='task-id'>Topic Task</div>
+    <div class='task-title2'>Week Integration Task (Days 1-5)</div>
+  </div>
+  <div class='task-desc'>Make a <strong class='emph'>program</strong> that combines all Days 1-5 working in one flow: W, P, P, P, V. Take user <strong class='emph'>input</strong>, process it using learned logic, and print final <strong class='emph'>output</strong>.</div>
+  <div class='task-check'><span class='task-check-label'>Expected Check:</span> <strong class='emph'>Program</strong> clearly includes all five day areas and runs successfully for at least 3 test cases.</div>
+</div>
+</div></div>
+    </article>
+
+        <article class='card quiz fade-up'>
+      <div class='card-head'><div class='card-title'>Revision MCQ Checkpoint (Interactive)</div></div>
+      <div class='card-body'><div class='mcq-card' data-day='7'>
+  <div class='mcq-intro'>Select one option for each question, then click <strong>Check Answers</strong>.</div>
+  <div class='mcq-item' data-answer='0'>
+  <div class='mcq-question'>Q1. Which option is the best <strong class='emph'>beginner</strong> learning flow for &#39;<strong class='emph'>Review</strong>&#39;?</div>
+  <div class='mcq-options'>
+    <label class='mcq-option'><input type='radio' name='d7_q1' value='0'><span>Run a small example, check output, then write one clear rule.</span></label>
+<label class='mcq-option'><input type='radio' name='d7_q1' value='1'><span>Skip code and only read theory.</span></label>
+<label class='mcq-option'><input type='radio' name='d7_q1' value='2'><span>Start with advanced models and come back later.</span></label>
+<label class='mcq-option'><input type='radio' name='d7_q1' value='3'><span>Copy final answer without running it.</span></label>
+  </div>
+  <div class='mcq-feedback'></div>
+  <div class='mcq-why'>Explanation: Best <strong class='emph'>beginner</strong> progress comes from: small <strong class='emph'>code</strong> run -&gt; <strong class='emph'>output</strong> check -&gt; short rule note.</div>
+</div>
+<div class='mcq-item' data-answer='0'>
+  <div class='mcq-question'>Q2. After changing one value in &#39;second <strong class='emph'>concept</strong>&#39; <strong class='emph'>code</strong>, what should you do next?</div>
+  <div class='mcq-options'>
+    <label class='mcq-option'><input type='radio' name='d7_q2' value='0'><span>Run again and compare output with previous run.</span></label>
+<label class='mcq-option'><input type='radio' name='d7_q2' value='1'><span>Delete the old output and move on.</span></label>
+<label class='mcq-option'><input type='radio' name='d7_q2' value='2'><span>Ignore output if there is no crash.</span></label>
+<label class='mcq-option'><input type='radio' name='d7_q2' value='3'><span>Change many values at once.</span></label>
+  </div>
+  <div class='mcq-feedback'></div>
+  <div class='mcq-why'>Explanation: One change at a time keeps learning <strong class='emph'>clear</strong> and helps you <strong class='emph'>understand</strong> cause and effect.</div>
+</div>
+<div class='mcq-item' data-answer='0'>
+  <div class='mcq-question'>Q3. If &#39;third <strong class='emph'>concept</strong>&#39; <strong class='emph'>output</strong> is unexpected, what is the safest debugging step?</div>
+  <div class='mcq-options'>
+    <label class='mcq-option'><input type='radio' name='d7_q3' value='0'><span>Print intermediate values and verify each step.</span></label>
+<label class='mcq-option'><input type='radio' name='d7_q3' value='1'><span>Rewrite full file from zero immediately.</span></label>
+<label class='mcq-option'><input type='radio' name='d7_q3' value='2'><span>Ignore it if program still runs.</span></label>
+<label class='mcq-option'><input type='radio' name='d7_q3' value='3'><span>Remove comments to shorten code.</span></label>
+  </div>
+  <div class='mcq-feedback'></div>
+  <div class='mcq-why'>Explanation: Intermediate outputs show exactly where logic changed, so fixing becomes easy.</div>
+</div>
+<div class='mcq-item' data-answer='0'>
+  <div class='mcq-question'>Q4. For today, which <strong class='emph'>task</strong> evidence shows real understanding?</div>
+  <div class='mcq-options'>
+    <label class='mcq-option'><input type='radio' name='d7_q4' value='0'><span>Code runs, outputs are recorded, and notes explain why results happen.</span></label>
+<label class='mcq-option'><input type='radio' name='d7_q4' value='1'><span>Only final code exists without outputs.</span></label>
+<label class='mcq-option'><input type='radio' name='d7_q4' value='2'><span>Only notes exist without running code.</span></label>
+<label class='mcq-option'><input type='radio' name='d7_q4' value='3'><span>Only one screenshot exists without explanation.</span></label>
+  </div>
+  <div class='mcq-feedback'></div>
+  <div class='mcq-why'>Explanation: Real learning needs runnable <strong class='emph'>code</strong> + verified <strong class='emph'>output</strong> + easy explanation.</div>
+</div>
+<div class='mcq-item' data-answer='0'>
+  <div class='mcq-question'>Q5. How does today&#39;s learning help future ML work?</div>
+  <div class='mcq-options'>
+    <label class='mcq-option'><input type='radio' name='d7_q5' value='0'><span>It builds reliable foundations for data handling, model code, and debugging.</span></label>
+<label class='mcq-option'><input type='radio' name='d7_q5' value='1'><span>It is not needed after this week.</span></label>
+<label class='mcq-option'><input type='radio' name='d7_q5' value='2'><span>It only helps for UI design.</span></label>
+<label class='mcq-option'><input type='radio' name='d7_q5' value='3'><span>It replaces model evaluation.</span></label>
+  </div>
+  <div class='mcq-feedback'></div>
+  <div class='mcq-why'>Explanation: Strong basics directly reduce ML bugs and improve <strong class='emph'>model</strong> development speed.</div>
+</div>
+  <div class='mcq-actions'>
+    <button type='button' class='mcq-btn mcq-check'>Check Answers</button>
+    <button type='button' class='mcq-btn mcq-reset'>Reset</button>
+    <div class='mcq-score'></div>
+  </div>
+</div></div>
+    </article>
+
+    <article class='card micro span2 fade-up'>
+      <div class='card-head'><div class='card-title'>Micro Check Before Next Day</div></div>
+      <div class='card-body'><ul class='list'><li>Can I explain each <strong class='emph'>subtopic</strong> in easy words without copying notes?</li>
+<li>Can I run the commented <strong class='emph'>code</strong> and <strong class='emph'>understand</strong> each block?</li>
+<li>Can I edit <strong class='emph'>input</strong> values and predict new <strong class='emph'>output</strong> correctly?</li>
+<li>Can I connect today&#39;s topic to <strong class='emph'>machine learning</strong> workflow?</li></ul></div>
+    </article>
+  </div>
+</section></main>
+<footer class='footer'>Week 3 complete. Mastery is built from small daily wins.</footer>
+<script src='../assets/course-script.js'></script>
+</body>
+</html>
